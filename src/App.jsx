@@ -1,35 +1,29 @@
-import React, { useState } from 'react'
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Courses from "./pages/Courses";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
+import Navbar from "./components/Navbar";
 
-import { Routes, Route } from "react-router-dom"
-import Home from './pages/Home'
-import About from './pages/About'
-import Courses from './pages/Courses'
-import Contact from './pages/Contact'
-import NotFound from './pages/NotFound'
-
-const App = () => {
-
-  let [theme, setTheme] = useState(true)
-
-
+function App() {
   return (
     <>
-      <Navbar theme={theme} setTheme={setTheme} />
-
+    <Navbar />
+  
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/contact" element={<Contact theme={theme} />} />
-        <Route path="/*" element={<NotFound />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+
+        {/* Always last */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
-
-      <Footer theme={theme} setTheme={setTheme} />
     </>
-
-  )
+  );
 }
 
-export default App
+export default App;
