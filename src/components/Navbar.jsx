@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaBookOpen } from "react-icons/fa";
 import { FiMoon } from "react-icons/fi";
 import { LuSun } from "react-icons/lu";
@@ -56,7 +56,7 @@ function Navbar() {
             className="flex items-center justify-center text-(--color-text-muted) ml-4"
             aria-label="Toggle theme"
           >
-            {isDark ?  <LuSun size={26} />:<FiMoon size={26} /> }
+            {isDark ? <LuSun size={26} /> : <FiMoon size={26} />}
           </button>
         </div>
       </div>
