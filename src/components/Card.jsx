@@ -1,8 +1,14 @@
-import React from 'react'
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const Card = (props) => {
+
+  const navigate = useNavigate()
+
   return (
-    <div className='h-auto w-110 bg-(--color-bg) border-2 text-(--color-primary) rounded-2xl cursor-pointer'>
+    <div
+      onClick={() => { navigate(`/courses/${props.id}`) }}
+      className='h-auto w-110 bg-(--color-bg) border-2 text-(--color-primary) rounded-2xl cursor-pointer' >
       <img src={props.image} className={"rounded-t-2xl"} />
 
       <div className='flex flex-col items-center'>

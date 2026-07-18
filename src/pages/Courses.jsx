@@ -21,6 +21,7 @@ function Courses() {
       <div className='bg-(--color-bg) p-8 grid grid-cols-3  justify-center items-center gap-8'>
         {data.map((course) => (
           <Card
+            id={course.id}
             title={course.title}
             image={course.image}
             category={course.category}
